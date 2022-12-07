@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>HighRadius</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header__main">
+          <div class="header__logo">
+            <img id="navlogo" src="images/navicon.svg" />
+          </div>
+          <div class="header__invoice">Invoice List</div>
+          <div class="header__highradius">
+            <img src="images/logo.svg" />
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="content__middle">
+          <div class="content__tools">
+            <div class="content__crudbox">
+              
+              <button id="openadd" class="content__createbox" type="button" >
+                <ion-icon name="add-outline"></ion-icon>
+                <p>Add</p>
+              </button>
+              <button id="openedit" class="content__createbox" type="button">
+                <ion-icon name="pencil-outline"></ion-icon>
+                <p>Edit</p>
+              </button>
+              <button id="opendelete" class="content__createbox" type="button">
+                <ion-icon name="remove-outline"></ion-icon>
+                <p>Delete</p>
+              </button>
+            </div>
+            <div class="content__searchbox">
+              <input
+                id="search-bar"
+                type="text"
+                placeholder="Search by Invoice Number"
+              />
+              <div class="content__searchicon">
+                <img src="images/search.svg" />
+              </div>
+            </div>
+          </div>
+          <div class="content__feeds">
+            
+            <div class="content__feedtable">
+
+             
+              <table id="tableheader">
+                <thead>
+                  <tr>
+                    <th align="left" >
+                      <input type="checkbox" id="selectall"> 
+                    </th>
+                    <th align="left">Customer Name</th>
+                    <th align="left">Customer #</th>
+                    <th align="left">Invoice #</th>
+                    <th align="left">Invoice Amount</th>
+                    <th align="left">Due Date</th>
+                    <th align="left">Predicted Payment Date</th>
+                    <th align="left">Notes</th>    
+                  </tr>
+                </thead>
+               </table>
+               <div id="showData">
+	               	
+               </div>
+               <button  id="nextbutton" class='rightCircle'>
+	            <img src='images/Polygon 1.svg' alt="next">
+		       </button>
+		       <button id="previousbutton" class='leftCircle'>
+		        <img src='images/Polygon 2.svg' alt="previous">
+		       </button>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+      
+      </div>
+      
+    
+
+    </div>
+    <div class="addpopup" id="modal_container">
+      <div class="mainpopup">
+        <form>
+        <div class="add_content_tools">
+          <div class="addinvoicetext">
+            <p>Add Invoice</p>
+          </div>  
+          <div class="closeiconadd">
+            <button id="closeadd" class="cut">
+                <img src="images/baseline-close-24px.svg" alt="close">
+            </button>
+
+          </div>
+        </div>
+        <div class="mainform">
+          <div class="addformbox1">
+            <div>
+              <label class="formtext">Customer Name*</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input class="forminputdesign" id="addcustomer_name" type="text" >
+            </div><br>
+            <div>
+              <label class="formtext">Customer No*</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="text" id="addcustomer_no" class="forminputdesign" >
+            </div><br>
+            <div>
+              <label class="formtext">Invoice No*</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="text" id="addinvoice_no" class="forminputdesign" >
+            </div><br>
+            <div>
+              <label class="formtext">Invoice Amount*</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="text" id="addinvoice_amount" class="forminputdesign" >
+            </div><br>
+
+          </div>
+          <div class="addformbox2">
+            <div>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label class="formtext">Due Date*</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="date" id="add_duedate"class="forminputdesign" >
+            </div><br>
+            <div>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label class="formtext">Notes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="text" id="addnotes"class="forminputdesignnotes" >
+            </div>
+          </div>
+
+        </div>
+        <div class="bottom_content_tools">
+          
+          <div class="bottom_content_tools2">
+            <div>
+              <button id="clearaddcontents"class="editformbuttons" type="button" >
+                <p>Clear</p>
+              </button>&nbsp;&nbsp;
+              <button id="submitadd"class="editformbuttons" type="button">
+                <p>add</p>
+              </button>
+            </div> 
+          </form> 
+          </div>
+          <div class="bottom_content_tools1">
+            <button id="addcancel" class="cut">
+              <p>cancel</p>
+            </button>
+          </div>
+        
+        </div>
+        
+      </div>
+      
+    </div>
+    <div class="editpopup" id="edit_modal_container">
+      <div class="editmainpopup">
+        <div class="edit_content_tools">
+          <div class="addinvoicetext">
+            <p>Edit Invoice</p>
+          </div>  
+          <div class="closeiconedit">
+            <button id="closeedit" class="cut">
+                <img src="images/baseline-close-24px.svg" alt="close">
+            </button>
+
+          </div>
+        </div>
+        <form>
+        <div class="editmainform">
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;<label class="formtext">Invoice amount</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" id="editinvoice_amount" class="forminputdesign" required>
+          </div><br>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;<label class="formtext">Notes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" id="editnotes" class="forminputdesignnotes" required>
+          </div>
+        </div>
+        <div class="edit_bottom_content_box">
+          
+          <div class="bottom_content_tools2">
+            <div>
+              <button id="reset_edit_data" class="editformbuttons" type="button" >
+                <p>Reset</p>
+              </button>&nbsp;&nbsp;
+              <button id="editsubmit"class="editformbuttons" type="button">
+                <p>save</p>
+              </button>
+            </div>
+            
+          </div> </form>
+          <div class="bottom_content_tools1">
+            <button id="editcancel" class="cut">
+              <p>cancel</p>
+            </button>
+          </div>
+
+        </div>
+     
+      </div>
+      
+    </div>
+
+    <div class="deletepopup" id="delete_modal_container">
+      <div class="deletemainpopup">
+        <div class ="delete_content_tools">
+          <div class="addinvoicetext">
+            <p>Delete record(s)?</p>
+          </div>  
+          <div class="closeicondelete">
+            <button id="closedelete" class="cut">
+                <img src="images/baseline-close-24px.svg" alt="close">
+            </button>
+          </div>
+        </div>
+        <div class="deletemaindiv">
+            <p class="deletetextcolor">
+              You'll lose your record(s) after this action. We can't recover them once you delete.
+            </p><br>
+            <p class="deletetextcolor">
+              Are you sure you want to <font color="#FF5E5E">permanently delete</font> them?
+            </p>
+        </div>
+        <div class="delete_bottom_content_box">
+          <button id="canceldelete" class="editformbuttons" type="button" >
+            <p>cancel</p>
+          </button>&nbsp;&nbsp;
+          <button class="editformbuttons" id="save_delete" type="button">
+            <p>save</p>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+
+  </body>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script src="index.js"></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
+</html>
