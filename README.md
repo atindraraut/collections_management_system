@@ -9,9 +9,12 @@ In a Business environment it is hard to manage the day to day incoming invoice a
 ![image](https://user-images.githubusercontent.com/52089864/206149082-15f7f33b-7857-4f59-b249-0313df133eb5.png)
 
 ### Technology Used
-frontend: HTML,CSS,Javascript
-Backend: Java,Servlets
-Business Logic: Machine Learning,Regression models,Numpy,matplotlib,seaborn.
-Database: SQL
+**frontend**: HTML,CSS,Javascript
+
+**Backend**: Java,Servlets
+
+**Business** Logic: Machine Learning,Regression models,Numpy,matplotlib,seaborn.
+
+**Database**: SQL
 
 
